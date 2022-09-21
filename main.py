@@ -1,5 +1,5 @@
-from src.server.user_connect import *
-from serverdb.connect import *
+#from src.server.user_connect import *
+from server.connect import *
 #from dropbase import *
 
 ##
