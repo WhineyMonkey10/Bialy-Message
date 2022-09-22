@@ -6,8 +6,15 @@ import colorama
 import flask
 import random
 import time
+from .connect import *
+
+
+# Send message
+
+def message_send(message):
+  db["newmessage"] = message
 
 # Get username, and userid
-userid = db["client_user"]
-del db["client_user"]
-print(f"{colorama.fore.GREEN} User ID: {userid}")
+
+def testmessage():
+  print(f"{colorama.Fore.GREEN}User ID: {usersetup()}. Sending chat message to test connection")

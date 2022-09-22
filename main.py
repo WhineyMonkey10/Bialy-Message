@@ -1,9 +1,23 @@
+
 #from src.server.user_connect import *
-from server.connect import *
+from server.handlers.connect import usersetup
+from server.handlers.message_send import *
+from server.handlers.message_receive import *
+from replit import db
+db["newmessage"] = "bob"
 #from dropbase import *
 
 ##
-currentuserid = connect()
-keys = db.keys()
-db["client_user"] = [currentuserid]
-print(currentuserid)
+
+#connectionid = usersetup()
+
+
+#if chatuser == "":
+      
+#elif chatuser != "":
+testmessage()
+start_receiving()
+while True:
+  message = input("Message to send")
+  message_send(message)
+  
