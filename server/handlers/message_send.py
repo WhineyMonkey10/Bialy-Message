@@ -19,5 +19,5 @@ def message_send(message):
 
 def testmessage():
   print(f"{colorama.Fore.GREEN}User ID: {usersetup()}. Sending chat message to test connection...")
-  message = "Hell World"
+  message = "Hello World"
   message_send(message)
