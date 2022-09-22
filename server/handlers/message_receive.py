@@ -1,8 +1,7 @@
 from replit import db
 import colorama
 
-def start_receiving():
-  while True:
-    received_message = value = db["newmessage"]
+def receive():
+    received_message = db["newmessage"]
     print(received_message)
     del db["newmessage"]

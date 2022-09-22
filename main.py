@@ -4,7 +4,7 @@ from server.handlers.connect import usersetup
 from server.handlers.message_send import *
 from server.handlers.message_receive import *
 from replit import db
-db["newmessage"] = "bob"
+import colorama
 #from dropbase import *
 
 ##
@@ -16,8 +16,10 @@ db["newmessage"] = "bob"
       
 #elif chatuser != "":
 testmessage()
-start_receiving()
 while True:
-  message = input("Message to send")
+  import colorama
+  message = input(f"{colorama.Fore.MAGENTA}Message to send: \n {colorama.Fore.RESET}")
+  #print(f"{colorama.Fore.GREEN}Mesage Sent")
   message_send(message)
+  receive()
   

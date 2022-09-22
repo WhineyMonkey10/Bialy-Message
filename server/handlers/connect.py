@@ -2,9 +2,9 @@ from temparchive.src.database import mathbig
 import colorama
 from replit import db
 import random
-
+chatuser = input("Enter a username to chat: ")
 def usersetup():
-    chatuser = input("Enter a username to chat: ")
+    
     connectionid = (f"{chatuser}{random.randint(1, 9999)}")
     return connectionid
 
