@@ -11,13 +11,11 @@ import pymongo
 import os
 
 #client
-connection_string = load_dotenv()
 client = pymongo.MongoClient("string")
-load_dotenv()
-string = os.getenv()
+
 #print(db.list_collection_names())
 #db.create_collection("messages")
-
+db = client.db_name
 # Send message
 
 def message_send(message):
@@ -26,9 +24,18 @@ def message_send(message):
   insert_message = { "message": message}
   my_collection = db.messages
   my_collection.insert_one(insert_message)
+  failed = False
+  if db!=client.db_name:
+    failed = True
+  return failed
 # Get username, and userid
 
 def testmessage():
   print(f"{colorama.Fore.GREEN}User ID: {usersetup()}. Sending chat message to test connection...")
   message = "Hello World"
-  message_send(message)
+  
+  error = False
+  if message_send(message) == False:
+    print(f"{colorama.Fore.BLUE} Test sucsessful.")
+  else:
+    print(f"{colorama.Fore.RED} Test failed, please report the error on GitHub")

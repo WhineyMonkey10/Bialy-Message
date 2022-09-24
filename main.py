@@ -15,8 +15,8 @@ import colorama
 #if chatuser == "":
       
 #elif chatuser != "":
-receive()
 testmessage()
+receive()
 while True:
   import colorama
   message = input(f"{colorama.Fore.MAGENTA}Message to send: \n {colorama.Fore.RESET}")

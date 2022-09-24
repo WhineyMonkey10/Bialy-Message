@@ -1,6 +1,7 @@
 from replit import db
 import colorama
 import pymongo
+import time
 
 #client
 client = pymongo.MongoClient("string")
@@ -11,4 +12,5 @@ def receive():
     my_collection = db.messages
     received_message = my_collection.find_one()
     print(received_message)
-    #del db["newmessage"]
+    time.sleep(0.5)
+    my_collection.delete_one()
