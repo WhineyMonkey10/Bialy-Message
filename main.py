@@ -15,6 +15,7 @@ import colorama
 #if chatuser == "":
       
 #elif chatuser != "":
+receive()
 testmessage()
 while True:
   import colorama
