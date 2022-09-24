@@ -13,4 +13,4 @@ def receive():
     received_message = my_collection.find_one()
     print(received_message)
     time.sleep(0.5)
-    my_collection.delete_one()
+    my_collection.delete_many({})
