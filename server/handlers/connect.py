@@ -4,12 +4,18 @@ from replit import db
 import random
 
 chatuser = input("Enter a username to chat (no spaces): ")
+chatusermsg = input("User to chat to (Eg. user#0000): ")
 
 
-def usersetup():
+def usersetup(output):
+    notid = output
+    connectionid = (f"{chatuser}#{random.randint(1, 9999)}")
+    if output == id:
+        return connectionid
 
-    connectionid = (f"{chatuser}{random.randint(1, 9999)}")
-    return connectionid
+def chattouser():
+    chattouser = chatusermsg
+    return chattouser
 
 
 #def connectionid():

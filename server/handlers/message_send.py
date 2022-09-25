@@ -22,8 +22,12 @@ db = client.db_name
 
 def message_send(message):
     #message = f"{colorama.Fore.BLUE}{usersetup()}: {colorama.Fore.MAGENTA}{message}"
-    message = f"{usersetup()}: {message}"
-    insert_message = {"message": message}
+    message = f"{usersetup(id)}: {message}"
+    insert_message = {
+        "message": message,
+        "touser": chattouser(),
+        "delivered": False
+    }
     my_collection = db.messages
     my_collection.insert_one(insert_message)
     failed = False
@@ -37,13 +41,13 @@ def message_send(message):
 
 def testmessage():
     print(
-        f"{colorama.Fore.GREEN}User ID: {usersetup()}. Sending chat message to test connection..."
+        f"{colorama.Fore.GREEN}User ID: {usersetup(id)}. Sending chat message to test connection..."
     )
     message = "Hello World"
 
     error = False
     if message_send(message) == False:
-        print(f"{colorama.Fore.BLUE} Test sucsessful.")
+        print(f"{colorama.Fore.BLUE} Test sucsessful. {colorama.Fore.WHITE}")
     else:
         print(
             f"{colorama.Fore.RED} Test failed, please report the error on GitHub"
