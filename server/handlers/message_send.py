@@ -1,7 +1,6 @@
-
 ## Imports
 
-from replit import db
+#from replit import db
 import colorama
 import flask
 import random
@@ -11,31 +10,41 @@ import pymongo
 import os
 
 #client
-client = pymongo.MongoClient("string")
+client = pymongo.MongoClient(
+    "string"
+)
 
 #print(db.list_collection_names())
 #db.create_collection("messages")
 db = client.db_name
 # Send message
 
+
 def message_send(message):
-  #message = f"{colorama.Fore.BLUE}{usersetup()}: {colorama.Fore.MAGENTA}{message}"
-  message = f"{usersetup()}: {message}"
-  insert_message = { "message": message}
-  my_collection = db.messages
-  my_collection.insert_one(insert_message)
-  failed = False
-  if db!=client.db_name:
-    failed = True
-  return failed
+    #message = f"{colorama.Fore.BLUE}{usersetup()}: {colorama.Fore.MAGENTA}{message}"
+    message = f"{usersetup()}: {message}"
+    insert_message = {"message": message}
+    my_collection = db.messages
+    my_collection.insert_one(insert_message)
+    failed = False
+    if db != client.db_name:
+        failed = True
+    return failed
+
+
 # Get username, and userid
 
+
 def testmessage():
-  print(f"{colorama.Fore.GREEN}User ID: {usersetup()}. Sending chat message to test connection...")
-  message = "Hello World"
-  
-  error = False
-  if message_send(message) == False:
-    print(f"{colorama.Fore.BLUE} Test sucsessful.")
-  else:
-    print(f"{colorama.Fore.RED} Test failed, please report the error on GitHub")
+    print(
+        f"{colorama.Fore.GREEN}User ID: {usersetup()}. Sending chat message to test connection..."
+    )
+    message = "Hello World"
+
+    error = False
+    if message_send(message) == False:
+        print(f"{colorama.Fore.BLUE} Test sucsessful.")
+    else:
+        print(
+            f"{colorama.Fore.RED} Test failed, please report the error on GitHub"
+        )
