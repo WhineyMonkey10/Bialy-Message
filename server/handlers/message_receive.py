@@ -5,7 +5,7 @@ from .connect import *
 
 #client
 client = pymongo.MongoClient(
-    "string"
+    "s"
 )
 db = client.db_name
 
@@ -15,7 +15,7 @@ db = client.db_name
 def receive():
     my_collection = db.messages
     userid = usersetup(id)
-    for received_message in my_collection.find({"touser": userid, "delivered": False}):
+    for received_message in my_collection.find({"delivered": False}):
     #  received_message = my_collection.find()  #query for not delivered flag
       print(received_message['message'])
       time.sleep(0.5)

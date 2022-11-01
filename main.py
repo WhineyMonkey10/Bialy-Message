@@ -4,6 +4,9 @@ from server.handlers.message_send import *
 from server.handlers.message_receive import *
 #from replit import db
 import colorama
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 #from dropbase import *
 
 ##

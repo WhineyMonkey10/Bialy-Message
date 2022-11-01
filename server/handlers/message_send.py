@@ -11,7 +11,7 @@ import os
 
 #client
 client = pymongo.MongoClient(
-    "string"
+    "s"
 )
 
 #print(db.list_collection_names())
@@ -25,7 +25,6 @@ def message_send(message):
     message = f"{usersetup(id)}: {message}"
     insert_message = {
         "message": message,
-        "touser": chattouser(),
         "delivered": False
     }
     my_collection = db.messages

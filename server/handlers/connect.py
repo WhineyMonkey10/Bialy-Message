@@ -1,10 +1,8 @@
 from temparchive.src.database import mathbig
 import colorama
-from replit import db
 import random
 
 chatuser = input("Enter a username to chat (no spaces): ")
-chatusermsg = input("User to chat to (Eg. user#0000): ")
 
 
 def usersetup(output):
@@ -12,10 +10,6 @@ def usersetup(output):
     connectionid = (f"{chatuser}#{random.randint(1, 9999)}")
     if output == id:
         return connectionid
-
-def chattouser():
-    chattouser = chatusermsg
-    return chattouser
 
 
 #def connectionid():
