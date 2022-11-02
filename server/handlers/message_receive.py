@@ -5,7 +5,7 @@ from .connect import *
 
 #client
 client = pymongo.MongoClient(
-    "mongodb+srv://whmonkey:yf5XaXlHUnEcA7gu@messagetransmission.1e9ycpi.mongodb.net/?retryWrites=true&w=majority"
+    ""
 )
 db = client.db_name
 
