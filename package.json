@@ -1,0 +1,22 @@
+{
+  "name": "messager",
+  "version": "1.0.0",
+  "description": "A ´simple´ messaging engine using mainly ReplIT databases to run.",
+  "main": "/client/static/get_message.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhineyMonkey10/Bialy-Message.git"
+  },
+  "author": "WhMonkey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhineyMonkey10/Bialy-Message/issues"
+  },
+  "homepage": "https://github.com/WhineyMonkey10/Bialy-Message#readme",
+  "dependencies": {
+    "mongodb": "^4.11.0"
+  }
+}

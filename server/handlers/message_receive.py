@@ -1,7 +1,6 @@
 #from replit import db
 import pymongo
 import time
-from .connect import *
 
 #client
 client = pymongo.MongoClient(
