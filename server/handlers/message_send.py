@@ -11,7 +11,7 @@ import os
 
 #client
 client = pymongo.MongoClient(
-    ""
+    "ms"
 )
 
 #print(db.list_collection_names())
